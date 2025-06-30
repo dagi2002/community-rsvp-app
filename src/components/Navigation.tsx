@@ -10,8 +10,8 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <Calendar className="h-8 w-8 text-purple-600" />
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <Calendar className="h-8 w-8 text-emerald-600" />
+          <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
               Addis Events Hub
             </span>
           </div>
@@ -21,8 +21,8 @@ const Navigation: React.FC = () => {
               to="/"
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                 location.pathname === '/'
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-                  : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
+                  ? 'bg-gradient-to-r from-emerald-600 to-amber-600 text-white shadow-lg'
+                  : 'text-gray-600 hover:text-emerald-600 hover:bg-emerald-50'
               }`}
             >
               <Calendar size={18} />
@@ -32,8 +32,8 @@ const Navigation: React.FC = () => {
               to="/rsvp"
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                 location.pathname === '/rsvp'
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-                  : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
+                  ? 'bg-gradient-to-r from-emerald-600 to-amber-600 text-white shadow-lg'
+                  : 'text-gray-600 hover:text-emerald-600 hover:bg-emerald-50'
               }`}
             >
               <UserPlus size={18} />

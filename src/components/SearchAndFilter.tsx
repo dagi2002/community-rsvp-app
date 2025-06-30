@@ -24,8 +24,7 @@ const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
             placeholder="Search events by title..."
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-          />
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200"          />
         </div>
         
         <div className="relative lg:w-64">
@@ -33,7 +32,7 @@ const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
           <select
             value={dateFilter}
             onChange={(e) => onDateFilterChange(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 appearance-none bg-white"
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 appearance-none bg-white"
           >
             <option value="all">All Events</option>
             <option value="upcoming">Upcoming</option>
