@@ -10,6 +10,8 @@ export interface Event {
   date: string;
   description: string;
   /** Optional image to display with the event */
-  image?: string;
+  images: string[];
   attendees: Attendee[];
 }
+
+export type EventType = Event;

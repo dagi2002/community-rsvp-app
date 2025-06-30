@@ -17,18 +17,20 @@ A simple React + Bolt UI application for listing upcoming community events in Ad
 ## 🚀 Local Setup
 
 1. **Clone the repo**
-
    ```bash
    git clone https://github.com/dagi2002/community-rsvp-app.git
    cd community-rsvp-app
+   ```
 2. **Install Dependencies**
    ```bash
    npm install
+   ```
 3. **Start the dev server**
       ```bash
-      npm run dev
+      npm run dev 
+      ```
 4. **Open in browser**
-    Visit http://localhost:5173 (or whatever URL Vite prints in your console)
+   Visit http://localhost:5173 (or whatever URL Vite prints in your console)
 
 
 🧪 Running Tests

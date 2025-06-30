@@ -32,12 +32,17 @@ const EventCard: React.FC<EventCardProps> = ({ event, totalAttendees }) => {
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
       <div className="h-2 bg-gradient-to-r from-emerald-500 to-amber-500"></div>
       
-      {event.image && (
-        <img
-          src={event.image}
-          alt={event.title}
-          className="w-full h-48 object-cover"
-        />
+      {event.images && event.images.length > 0 && (
+        <div className="grid grid-cols-2 gap-1 p-1">
+          {event.images.map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`${event.title} ${idx + 1}`}
+              className="w-full aspect-video object-cover rounded-sm transition-opacity hover:opacity-80"
+            />
+          ))}
+        </div>
       )}
 
       <div className="p-6">

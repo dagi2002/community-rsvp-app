@@ -148,6 +148,13 @@ const RSVPPage: React.FC = () => {
 
             {selectedEvent && (
               <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                {selectedEvent.images?.[0] && (
+                  <img
+                    src={selectedEvent.images[0]}
+                    alt={selectedEvent.title}
+                    className="w-full h-32 object-cover rounded-lg mb-2"
+                  />
+                )}
                 <h3 className="font-semibold text-emerald-900 mb-2">{selectedEvent.title}</h3>
                 <p className="text-emerald-700 text-sm mb-2">{selectedEvent.description}</p>
                 <p className="text-emerald-600 text-sm">
