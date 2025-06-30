@@ -9,7 +9,7 @@ const sampleEvent: Event = {
   title: 'Test Event Title',
   date: '2025-09-01T12:00:00.000Z',
   description: 'A description.',
-  images: ['/images/event1-1.png'],
+  images: ['/events1-1.png'],
   attendees: [],
 };
 

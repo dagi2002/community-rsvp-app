@@ -26,7 +26,7 @@ const getSampleEvents = (): Event[] => [
     title: 'Coffee Tasting at Dukamo-Bole',
     date: '2025-07-12T10:00:00.000Z',
     description: 'Experience the rich flavors of Ethiopian coffee with local experts in Bole.',
-    images: ['/images/event1-0.png', '/images/event1-1.png', '/images/event1-2.png'],
+    images: ['/events1-0.png', '/events1-1.png', '/events1-2.png'],
     attendees: [
       { name: 'Abebe Bekele', email: 'abebe@example.com', guests: 1 },
       { name: 'Helina Tesfaye', email: 'helina@example.com', guests: 0 }
