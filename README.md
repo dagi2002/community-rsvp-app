@@ -6,10 +6,10 @@ A simple React + Bolt UI application for listing upcoming community events in Ad
 
 ## 🔍 Features
 
-* **Event List** – Browse cards showing each event’s title, date, and description  
-* **RSVP Form** – Submit your name, email, and number of guests  
-* **Local Persistence** – All data is stored in browser storage (no backend needed)  
-* **Responsive UI** – Mobile-friendly, built with Bolt components  
+* **Event List** – Browse cards showing each event’s title, date, image, and description
+* **RSVP Form** – Submit your name, email, and number of guests
+* **Local Persistence** – All data is stored in browser storage (no backend needed)
+* **Event Images** – Events display a photo sourced from Internet
 * **Branch-based Workflow** – Structured Git workflow with feature branches and pull requests  
 
 ---
