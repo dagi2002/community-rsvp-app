@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
           <div className="flex items-center space-x-2">
             <Calendar className="h-8 w-8 text-purple-600" />
             <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Community Events
+              Addis Events Hub
             </span>
           </div>
 
@@ -26,7 +26,7 @@ const Navigation: React.FC = () => {
               }`}
             >
               <Calendar size={18} />
-              <span>Events</span>
+              <span>All Events</span>
             </Link>
             <Link
               to="/rsvp"
@@ -37,7 +37,7 @@ const Navigation: React.FC = () => {
               }`}
             >
               <UserPlus size={18} />
-              <span>RSVP</span>
+              <span>Make an RSVP</span>
             </Link>
           </div>
         </div>

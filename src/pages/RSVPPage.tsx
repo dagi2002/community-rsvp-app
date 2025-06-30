@@ -107,7 +107,7 @@ const RSVPPage: React.FC = () => {
         <div className="text-center mb-8">
           <UserPlus className="h-12 w-12 text-purple-600 mx-auto mb-4" />
           <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
-            RSVP to Event
+            Make an RSVP 
           </h1>
           <p className="text-gray-600">
             Register for an upcoming community event
@@ -245,7 +245,7 @@ const RSVPPage: React.FC = () => {
                   <span>Submitting RSVP...</span>
                 </div>
               ) : (
-                'Confirm RSVP'
+                'Make an RSVP'
               )}
             </button>
           </form>
