@@ -84,7 +84,7 @@ const RSVPPage: React.FC = () => {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50 flex items-center justify-center">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full mx-4 text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Check className="w-8 h-8 text-green-600" />
@@ -102,12 +102,12 @@ const RSVPPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
-          <UserPlus className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
-            Make an RSVP 
+        <UserPlus className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent mb-2">
+        Make an RSVP 
           </h1>
           <p className="text-gray-600">
             Register for an upcoming community event
@@ -126,7 +126,7 @@ const RSVPPage: React.FC = () => {
                   id="eventId"
                   value={formData.eventId}
                   onChange={(e) => handleInputChange('eventId', e.target.value)}
-                  className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 ${
+                  className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 ${
                     errors.eventId ? 'border-red-300 bg-red-50' : 'border-gray-200'
                   }`}
                 >
@@ -147,10 +147,10 @@ const RSVPPage: React.FC = () => {
             </div>
 
             {selectedEvent && (
-              <div className="bg-purple-50 rounded-xl p-4 border border-purple-100">
-                <h3 className="font-semibold text-purple-900 mb-2">{selectedEvent.title}</h3>
-                <p className="text-purple-700 text-sm mb-2">{selectedEvent.description}</p>
-                <p className="text-purple-600 text-sm">
+              <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                <h3 className="font-semibold text-emerald-900 mb-2">{selectedEvent.title}</h3>
+                <p className="text-emerald-700 text-sm mb-2">{selectedEvent.description}</p>
+                <p className="text-emerald-600 text-sm">
                   📅 {new Date(selectedEvent.date).toLocaleDateString('en-US', {
                     weekday: 'long',
                     year: 'numeric',
@@ -173,7 +173,7 @@ const RSVPPage: React.FC = () => {
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Enter your full name"
-                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 ${
+                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 ${
                   errors.name ? 'border-red-300 bg-red-50' : 'border-gray-200'
                 }`}
               />
@@ -195,7 +195,7 @@ const RSVPPage: React.FC = () => {
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="Enter your email address"
-                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 ${
+                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 ${
                   errors.email ? 'border-red-300 bg-red-50' : 'border-gray-200'
                 }`}
               />
@@ -219,7 +219,7 @@ const RSVPPage: React.FC = () => {
                 value={formData.guests}
                 onChange={(e) => handleInputChange('guests', parseInt(e.target.value) || 0)}
                 placeholder="0"
-                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 ${
+                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 ${
                   errors.guests ? 'border-red-300 bg-red-50' : 'border-gray-200'
                 }`}
               />
@@ -237,7 +237,7 @@ const RSVPPage: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 focus:ring-4 focus:ring-purple-200 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-gradient-to-r from-emerald-600 to-amber-600 text-white py-4 rounded-xl font-semibold hover:from-emerald-700 hover:to-amber-700 focus:ring-4 focus:ring-emerald-200 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {isSubmitting ? (
                 <div className="flex items-center justify-center space-x-2">
