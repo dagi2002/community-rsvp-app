@@ -23,39 +23,68 @@ export const saveEventsToStorage = (events: Event[]): void => {
 const getSampleEvents = (): Event[] => [
   {
     id: '1',
-    title: 'React Meetup: Building Modern UIs',
-    date: '2025-02-15T18:00:00.000Z',
-    description: 'Join us for an evening of React best practices and modern UI development techniques.',
+    title: 'Coffee Tasting at Dukamo-Bole',
+    date: '2025-07-12T10:00:00.000Z',
+    description: 'Experience the rich flavors of Ethiopian coffee with local experts in Bole.',
     attendees: [
-      { name: 'John Doe', email: 'john@example.com', guests: 1 },
-      { name: 'Sarah Wilson', email: 'sarah@example.com', guests: 0 }
+      { name: 'Abebe Bekele', email: 'abebe@example.com', guests: 1 },
+      { name: 'Helina Tesfaye', email: 'helina@example.com', guests: 0 }
     ]
   },
   {
     id: '2',
-    title: 'TypeScript Workshop',
-    date: '2025-02-22T14:00:00.000Z',
-    description: 'Learn advanced TypeScript patterns and how to leverage them in your React applications.',
+    title: 'Walking Tour of Historic Piazza',
+    date: '2025-07-15T08:30:00.000Z',
+    description: "Discover Addis Ababa's oldest neighborhoods on this guided walking tour.",
     attendees: [
-      { name: 'Mike Johnson', email: 'mike@example.com', guests: 2 }
+      { name: 'Kalkidan Hailu', email: 'kalkidan@example.com', guests: 2 }
     ]
   },
   {
     id: '3',
-    title: 'Open Source Contribution Day',
-    date: '2025-03-01T10:00:00.000Z',
-    description: 'Collaborate with fellow developers and contribute to open source React projects.',
-    attendees: []
+    title: 'Injera Cooking Workshop at Megenagna',
+    date: '2025-07-11T15:00:00.000Z',
+    description: 'Learn how to make traditional injera and wot with our expert Momma chefs.',
+    attendees: [
+      { name: 'Liya Teshome', email: 'birhanu@example.com', guests: 100 },]
   },
   {
     id: '4',
-    title: 'Frontend Performance Optimization',
-    date: '2025-03-08T19:00:00.000Z',
-    description: 'Deep dive into performance optimization techniques for modern web applications.',
+    title: 'Traditional Dance Night at Meskel Square',
+    date: '2025-08-30T18:00:00.000Z',
+    description: 'Enjoy live music and traditional dances under the stars in Meskel Square.',
     attendees: [
-      { name: 'Emma Davis', email: 'emma@example.com', guests: 0 },
-      { name: 'Alex Chen', email: 'alex@example.com', guests: 1 },
-      { name: 'Lisa Brown', email: 'lisa@example.com', guests: 3 }
+      { name: 'Yonas Girma', email: 'yonas@example.com', guests: 3 },
+      { name: 'Lily Mekonnen', email: 'lily@example.com', guests: 1 },
+      { name: 'Samuel Tariku', email: 'samuel@example.com', guests: 3 }
     ]
-  }
+  },
+  {
+    id: '5',
+    title: 'Art Exhibition at Hitlon Hotel -Kikundi',
+    date: '2025-09-10T12:00:00.000Z',
+    description: 'Explore the vibrant world of art at Addis Ababa Museum.',
+    attendees: [
+      { name: 'Dagmawit Teshale', email: 'Dagmawit1@example.com', guests: 1 },
+      { name: 'Dagmawit Moges', email: 'Dagmawit2@example.com', guests: 1 }
+    ]
+  },
+  {
+    id: '6',
+    title: 'Boredom Busting at Unity Park Zoo',
+    date: '2025-09-15T09:00:00.000Z',
+    description: 'Discover the wonders of nature at onw of Addis Ababa`s most popular Zoo.',
+    attendees: []
+  },
+  {
+    id: '7',
+    title: 'Jazz Night with Mulatu Astatke at Gihon Hotel',
+    date: '2025-09-19T12:00:00.000Z',
+    description: 'Experience an unforgettable evening of Ethio-jazz as Mulatu Astatke performs live in the historic Gihon Hotel ballroom.',
+    attendees: [
+      { name: 'Dagem Amogne', email: 'dagmawi@example.com', guests: 1 },
+      { name: 'Fitsum Moges',   email: 'Fistum@example.com', guests: 1 }
+    ],
+  },
+
 ];
