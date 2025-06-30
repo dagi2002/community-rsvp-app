@@ -9,5 +9,7 @@ export interface Event {
   title: string;
   date: string;
   description: string;
+  /** Optional image to display with the event */
+  image?: string;
   attendees: Attendee[];
 }

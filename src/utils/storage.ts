@@ -26,6 +26,7 @@ const getSampleEvents = (): Event[] => [
     title: 'Coffee Tasting at Dukamo-Bole',
     date: '2025-07-12T10:00:00.000Z',
     description: 'Experience the rich flavors of Ethiopian coffee with local experts in Bole.',
+    image: '/images/dukamo1.webp',
     attendees: [
       { name: 'Abebe Bekele', email: 'abebe@example.com', guests: 1 },
       { name: 'Helina Tesfaye', email: 'helina@example.com', guests: 0 }
@@ -36,6 +37,7 @@ const getSampleEvents = (): Event[] => [
     title: 'Walking Tour of Historic Piazza',
     date: '2025-07-15T08:30:00.000Z',
     description: "Discover Addis Ababa's oldest neighborhoods on this guided walking tour.",
+    image: 'https://source.unsplash.com/collection/1118905/600x400',
     attendees: [
       { name: 'Kalkidan Hailu', email: 'kalkidan@example.com', guests: 2 }
     ]
@@ -45,14 +47,19 @@ const getSampleEvents = (): Event[] => [
     title: 'Injera Cooking Workshop at Megenagna',
     date: '2025-07-11T15:00:00.000Z',
     description: 'Learn how to make traditional injera and wot with our expert Momma chefs.',
+    image: 'https://source.unsplash.com/collection/3571099/600x400',
+
     attendees: [
-      { name: 'Liya Teshome', email: 'birhanu@example.com', guests: 100 },]
+      { name: 'Liya Teshome', email: 'birhanu@example.com', guests: 100 }
+    ]
   },
   {
     id: '4',
     title: 'Traditional Dance Night at Meskel Square',
     date: '2025-08-30T18:00:00.000Z',
     description: 'Enjoy live music and traditional dances under the stars in Meskel Square.',
+    image: 'https://source.unsplash.com/collection/11649432/600x400',
+
     attendees: [
       { name: 'Yonas Girma', email: 'yonas@example.com', guests: 3 },
       { name: 'Lily Mekonnen', email: 'lily@example.com', guests: 1 },
@@ -64,6 +71,8 @@ const getSampleEvents = (): Event[] => [
     title: 'Art Exhibition at Hitlon Hotel -Kikundi',
     date: '2025-09-10T12:00:00.000Z',
     description: 'Explore the vibrant world of art at Addis Ababa Museum.',
+    image: 'https://source.unsplash.com/collection/1538152/600x400',
+
     attendees: [
       { name: 'Dagmawit Teshale', email: 'Dagmawit1@example.com', guests: 1 },
       { name: 'Dagmawit Moges', email: 'Dagmawit2@example.com', guests: 1 }
@@ -74,6 +83,8 @@ const getSampleEvents = (): Event[] => [
     title: 'Boredom Busting at Unity Park Zoo',
     date: '2025-09-15T09:00:00.000Z',
     description: 'Discover the wonders of nature at onw of Addis Ababa`s most popular Zoo.',
+    image: 'https://source.unsplash.com/collection/823904/600x400',
+
     attendees: []
   },
   {
@@ -81,10 +92,12 @@ const getSampleEvents = (): Event[] => [
     title: 'Jazz Night with Mulatu Astatke at Gihon Hotel',
     date: '2025-09-19T12:00:00.000Z',
     description: 'Experience an unforgettable evening of Ethio-jazz as Mulatu Astatke performs live in the historic Gihon Hotel ballroom.',
+    image: 'https://source.unsplash.com/collection/1960079/600x400',
+
     attendees: [
       { name: 'Dagem Amogne', email: 'dagmawi@example.com', guests: 1 },
       { name: 'Fitsum Moges',   email: 'Fistum@example.com', guests: 1 }
-    ],
+    ]
   },
 
 ];
