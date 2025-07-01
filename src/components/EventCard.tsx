@@ -29,13 +29,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, totalAttendees }) => {
   const { date, time } = formatDate(event.date);
 
   const maxImages = 3;
-  const minImages = 1;
   const images = event.images ? event.images.slice(0, maxImages) : [];
-  const placeholders = Math.max(minImages - images.length, 0);
-  const displayImages = [
-    ...images,
-    ...Array(placeholders).fill('/images/placeholder.png'),
-  ];
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const target = e.currentTarget;
@@ -55,11 +49,10 @@ const EventCard: React.FC<EventCardProps> = ({ event, totalAttendees }) => {
               key={idx}
               src={src}
               alt={`${event.title} ${idx + 1}`}
-              
               onError={handleImageError}
-
-              className="w-full h-auto object-cover rounded-sm shadow-sm"/>   
-                     ))}
+              className="w-full h-auto object-cover rounded-sm shadow-sm"
+            />
+          ))}
         </div>
       )}
 
