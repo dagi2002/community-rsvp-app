@@ -1,6 +1,6 @@
 import { Event } from '../types/Event';
 
-const STORAGE_KEY = 'community-events';
+const STORAGE_KEY = 'community-events-v2';
 
 export const getEventsFromStorage = (): Event[] => {
   try {
@@ -26,10 +26,15 @@ const getSampleEvents = (): Event[] => [
     title: 'Coffee Tasting at Dukamo-Bole',
     date: '2025-07-12T10:00:00.000Z',
     description: 'Experience the rich flavors of Ethiopian coffee with local experts in Bole.',
-    images: ['/images/events1-0.png', '/images/events1-1.png', '/images/events1-2.png'],    attendees: [
+    images: [
+      '/images/events1-0.png',
+      '/images/events1-1.png',
+      '/images/events1-2.png',
+    ],
+    attendees: [
       { name: 'Abebe Bekele', email: 'abebe@example.com', guests: 1 },
-      { name: 'Helina Tesfaye', email: 'helina@example.com', guests: 0 }
-    ]
+      { name: 'Helina Tesfaye', email: 'helina@example.com', guests: 0 },
+    ],
   },
   {
     id: '2',
@@ -47,7 +52,6 @@ const getSampleEvents = (): Event[] => [
     date: '2025-07-11T15:00:00.000Z',
     description: 'Learn how to make traditional injera and wot with our expert Momma chefs.',
     images: ['/images/event3-1.png', '/images/event3-2.png'],
-
     attendees: [
       { name: 'Liya Teshome', email: 'birhanu@example.com', guests: 100 }
     ]
@@ -58,7 +62,6 @@ const getSampleEvents = (): Event[] => [
     date: '2025-08-30T18:00:00.000Z',
     description: 'Enjoy live music and traditional dances under the stars in Meskel Square.',
     images: ['/images/event4-1.png', '/images/event4-2.png'],
-
     attendees: [
       { name: 'Yonas Girma', email: 'yonas@example.com', guests: 3 },
       { name: 'Lily Mekonnen', email: 'lily@example.com', guests: 1 },
@@ -71,7 +74,6 @@ const getSampleEvents = (): Event[] => [
     date: '2025-09-10T12:00:00.000Z',
     description: 'Explore the vibrant world of art at Addis Ababa Museum.',
     images: ['/images/event5-1.png', '/images/event5-2.png'],
-
     attendees: [
       { name: 'Dagmawit Teshale', email: 'Dagmawit1@example.com', guests: 1 },
       { name: 'Dagmawit Moges', email: 'Dagmawit2@example.com', guests: 1 }
@@ -83,7 +85,6 @@ const getSampleEvents = (): Event[] => [
     date: '2025-09-15T09:00:00.000Z',
     description: 'Discover the wonders of nature at onw of Addis Ababa`s most popular Zoo.',
     images: ['/images/event6-1.png', '/images/event6-2.png'],
-
     attendees: []
   },
   {
@@ -92,11 +93,9 @@ const getSampleEvents = (): Event[] => [
     date: '2025-09-19T12:00:00.000Z',
     description: 'Experience an unforgettable evening of Ethio-jazz as Mulatu Astatke performs live in the historic Gihon Hotel ballroom.',
     images: ['/images/event7-1.png', '/images/event7-2.png'],
-
     attendees: [
       { name: 'Dagem Amogne', email: 'dagmawi@example.com', guests: 1 },
-      { name: 'Fitsum Moges',   email: 'Fistum@example.com', guests: 1 }
+      { name: 'Fitsum Moges', email: 'Fistum@example.com', guests: 1 }
     ]
   },
-
 ];
