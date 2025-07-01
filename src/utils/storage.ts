@@ -70,7 +70,7 @@ const getSampleEvents = (): Event[] => [
   },
   {
     id: '5',
-    title: 'Art Exhibition at Hitlon Hotel -Kikundi',
+    title: 'Art Exhibition at Hilton Hotel -Kikundi',
     date: '2025-09-10T12:00:00.000Z',
     description: 'Explore the vibrant world of art at Addis Ababa Museum.',
     images: ['/images/event5-1.png', '/images/event5-2.png'],
