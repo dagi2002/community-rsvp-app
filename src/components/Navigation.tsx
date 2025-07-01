@@ -10,10 +10,10 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
         <div className="flex items-center space-x-4">
-        <img src="/images/placeholder.png" alt="Community Events logo" className="h-16 w-16" />
+        <img src="/images/placeholder.png" alt=" Addis Events Hublogo" className="h-16 w-16" />
         <Calendar className="h-8 w-8 text-emerald-600" />
         <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
-          Community Events
+        Addis Events Hub
         </span>
       </div>
 
