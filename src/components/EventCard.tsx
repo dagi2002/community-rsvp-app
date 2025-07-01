@@ -28,22 +28,29 @@ const EventCard: React.FC<EventCardProps> = ({ event, totalAttendees }) => {
 
   const { date, time } = formatDate(event.date);
 
+  const maxImages = 6;
+  const minImages = 3;
+  const images = event.images ? event.images.slice(0, maxImages) : [];
+  const placeholders = Math.max(minImages - images.length, 0);
+  const displayImages = [
+    ...images,
+    ...Array(placeholders).fill('/images/placeholder.png'),
+  ];
+
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
       <div className="h-2 bg-gradient-to-r from-emerald-500 to-amber-500"></div>
-      
-      {event.images && event.images.length > 0 && (
-        <div className="grid grid-cols-2 gap-1 p-1">
-          {event.images.map((src, idx) => (
-            <img
-              key={idx}
-              src={src}
-              alt={`${event.title} ${idx + 1}`}
-              className="w-full aspect-video object-cover rounded-sm transition-opacity hover:opacity-80"
-            />
-          ))}
-        </div>
-      )}
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 p-1">
+        {displayImages.map((src, idx) => (
+          <img
+            key={idx}
+            src={src}
+            alt={`${event.title} ${idx + 1}`}
+            className="w-full aspect-video object-cover rounded-sm transition-transform duration-200 hover:scale-105"
+          />
+        ))}
+      </div>
 
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
