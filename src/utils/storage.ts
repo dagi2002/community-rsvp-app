@@ -5,8 +5,8 @@ const STORAGE_KEY = 'community-events-v2';
 export const getEventsFromStorage = (): Event[] => {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    return stored ? JSON.parse(stored) : getSampleEvents();
-  } catch (error) {
+    return stored ? JSON.parse(stored) as Event[] : getSampleEvents();
+  } catch (error: unknown) {
     console.error('Error loading events from storage:', error);
     return getSampleEvents();
   }
@@ -15,7 +15,7 @@ export const getEventsFromStorage = (): Event[] => {
 export const saveEventsToStorage = (events: Event[]): void => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error saving events to storage:', error);
   }
 };
@@ -70,7 +70,7 @@ const getSampleEvents = (): Event[] => [
   },
   {
     id: '5',
-    title: 'Art Exhibition at Hilton Hotel -Kikundi',
+    title: 'Art Exhibition at Hilton Hotel - Kikundi',
     date: '2025-09-10T12:00:00.000Z',
     description: 'Explore the vibrant world of art at Addis Ababa Museum.',
     images: ['/images/event5-1.png', '/images/event5-2.png'],
@@ -83,7 +83,7 @@ const getSampleEvents = (): Event[] => [
     id: '6',
     title: 'Boredom Busting at Unity Park Zoo',
     date: '2025-09-15T09:00:00.000Z',
-    description: 'Discover the wonders of nature at onw of Addis Ababa`s most popular Zoo.',
+    description: 'Discover the wonders of nature at one of Addis Ababa’s most popular zoos.',
     images: ['/images/event6-1.png', '/images/event6-2.png'],
     attendees: []
   },
@@ -97,5 +97,5 @@ const getSampleEvents = (): Event[] => [
       { name: 'Dagem Amogne', email: 'dagmawi@example.com', guests: 1 },
       { name: 'Fitsum Moges', email: 'Fistum@example.com', guests: 1 }
     ]
-  },
+  }
 ];
