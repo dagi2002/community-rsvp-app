@@ -1,25 +1,26 @@
-import { beforeEach, expect, test } from 'vitest';
 import { getEventsFromStorage, saveEventsToStorage } from './storage';
+import { describe, expect, test, beforeEach } from 'vitest';
+import { Event } from '../../types/Event';
 
-
-type Event = {
-  id: string;
-  title: string;
-  description: string;
-  date: string;
-  attendees: any[];
-};
-
-const sample: Event[] = [
-  { id: '1', title: 'A', description: '', date: '', attendees: [] }
+const mockEvents: Event[] = [
+  {
+    id: '1',
+    title: 'Test',
+    description: '',
+    date: '',
+    images: [],
+    attendees: [],
+  },
 ];
 
 beforeEach(() => {
   localStorage.clear();
 });
 
-test('save and load events', () => {
-  saveEventsToStorage(sample as any);
-  const loaded = getEventsFromStorage();
-  expect(loaded).toEqual(sample);
+describe('storage utils', () => {
+  test('saveEventsToStorage and getEventsFromStorage work as expected', () => {
+    saveEventsToStorage(mockEvents);
+    const loaded = getEventsFromStorage();
+    expect(loaded).toEqual(mockEvents);
+  });
 });
