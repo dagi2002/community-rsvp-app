@@ -28,8 +28,8 @@ const EventCard: React.FC<EventCardProps> = ({ event, totalAttendees }) => {
 
   const { date, time } = formatDate(event.date);
 
-  const maxImages = 6;
-  const minImages = 3;
+  const maxImages = 3;
+  const minImages = 1;
   const images = event.images ? event.images.slice(0, maxImages) : [];
   const placeholders = Math.max(minImages - images.length, 0);
   const displayImages = [
@@ -37,20 +37,31 @@ const EventCard: React.FC<EventCardProps> = ({ event, totalAttendees }) => {
     ...Array(placeholders).fill('/images/placeholder.png'),
   ];
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.currentTarget;
+    if (!target.src.includes('placeholder.png')) {
+      target.src = '/images/placeholder.png';
+    }
+  };
+
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
       <div className="h-2 bg-gradient-to-r from-emerald-500 to-amber-500"></div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 p-1">
-        {displayImages.map((src, idx) => (
-          <img
-            key={idx}
-            src={src}
-            alt={`${event.title} ${idx + 1}`}
-            className="w-full aspect-video object-cover rounded-sm transition-transform duration-200 hover:scale-105"
-          />
-        ))}
-      </div>
+      {images.length > 0 && (
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 p-1">
+          {images.map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`${event.title} ${idx + 1}`}
+              
+              onError={handleImageError}
+
+              className="w-full h-auto object-cover rounded-sm shadow-sm"/>   
+                     ))}
+        </div>
+      )}
 
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">

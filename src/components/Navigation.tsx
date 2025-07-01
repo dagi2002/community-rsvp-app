@@ -9,12 +9,13 @@ const Navigation: React.FC = () => {
     <nav className="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
-          <Calendar className="h-8 w-8 text-emerald-600" />
-          <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
-              Addis Events Hub
-            </span>
-          </div>
+        <div className="flex items-center space-x-4">
+        <img src="/images/placeholder.png" alt="Community Events logo" className="h-16 w-16" />
+        <Calendar className="h-8 w-8 text-emerald-600" />
+        <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
+          Community Events
+        </span>
+      </div>
 
           <div className="flex space-x-4">
             <Link
