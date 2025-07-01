@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import EventsPage from './pages/EventsPage';
 import RSVPPage from './pages/RSVPPage';
 import NotFoundPage from './pages/NotFoundPage';
-
 
 function App() {
   return (
