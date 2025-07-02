@@ -10,9 +10,8 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
         <div className="flex items-center space-x-4">
-        <img src="/images/placeholder.png" alt="Addis Events Hublogo" className="h-16 w-16" />
-        <Calendar className="h-8 w-8 text-emerald-600" />
-        <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
+        <img src="/images/placeholder.png" alt="Addis Events Hublogo" className="h-14 w-14 rounded-sm" />
+        <span className="text-xl font-bold text-brand-primary">
         Addis Events Hub
         </span>
       </div>
@@ -22,19 +21,19 @@ const Navigation: React.FC = () => {
               to="/"
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                 location.pathname === '/'
-                  ? 'bg-gradient-to-r from-emerald-600 to-amber-600 text-white shadow-lg'
-                  : 'text-gray-600 hover:text-emerald-600 hover:bg-emerald-50'
+                  ? 'bg-brand-primary text-white shadow-lg'
+                  : 'text-gray-600 hover:text-brand-accent hover:bg-emerald-50'
               }`}
             >
-              <Calendar size={18} />
-              <span>All Events</span>
+              <Calendar size={18}/>
+              <span>Events</span>
             </Link>
             <Link
               to="/rsvp"
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                 location.pathname === '/rsvp'
-                  ? 'bg-gradient-to-r from-emerald-600 to-amber-600 text-white shadow-lg'
-                  : 'text-gray-600 hover:text-emerald-600 hover:bg-emerald-50'
+                  ? 'bg-emerald-600 text-white shadow-lg'
+                  : 'text-gray-600 hover:text-brand-accent hover:bg-emerald-50'
               }`}
             >
               <UserPlus size={18} />

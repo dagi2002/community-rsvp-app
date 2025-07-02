@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useEvents } from '../hooks/useEvents';
-import { UserPlus, Calendar, Check, AlertCircle, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronUp, Calendar, Check, AlertCircle, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const RSVPPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -25,6 +25,8 @@ const RSVPPage: React.FC = () => {
   const selectedEvent = events.find(event => event.id === formData.eventId);
   const eventImages = selectedEvent?.images || [];
   const hasImages = eventImages.length > 0;
+
+  const [selectFocused, setSelectFocused] = useState(false);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -130,7 +132,7 @@ const RSVPPage: React.FC = () => {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50 flex items-center justify-center">
+      <div className="min-h-screen bg-brand-bg flex items-center justify-center">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full mx-4 text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Check className="w-8 h-8 text-green-600" />
@@ -146,13 +148,12 @@ const RSVPPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50 py-8 px-4">
+    <div className="min-h-screen bg-brand-bg py-8 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-3"><ImageGallery side="left" /></div>
 
         <div className="lg:col-span-6 bg-white p-6 rounded-xl shadow space-y-6">
           <div className="text-center">
-            <UserPlus className="text-emerald-600 mx-auto mb-2" />
             <h1 className="font-bold text-2xl">Make an RSVP</h1>
             <p className="text-gray-600">Register for an upcoming community event</p>
           </div>
@@ -161,14 +162,16 @@ const RSVPPage: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="eventId" className="block text-sm font-semibold text-gray-700 mb-2">Select Event *</label>
+              <label htmlFor="eventId" className="block text-sm font-semibold text-brand-subtext mb-2">Select Event *</label>
               <div className="relative">
                 <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                 <select
                   id="eventId"
                   value={formData.eventId}
                   onChange={(e) => handleInputChange('eventId', e.target.value)}
-                  className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent ${
+                  onFocus={() => setSelectFocused(true)}
+                  onBlur={() => setSelectFocused(false)}
+                  className={`w-full pl-10 pr-4 py-3 border rounded-xl transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:shadow-md appearance-none ${
                     errors.eventId ? 'border-red-300 bg-red-50' : 'border-gray-200'
                   }`}
                 >
@@ -179,6 +182,11 @@ const RSVPPage: React.FC = () => {
                     </option>
                   ))}
                 </select>
+                {selectFocused ? (
+                  <ChevronUp className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" size={18} />
+                ) : (
+                  <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" size={18} />
+                )}
               </div>
               {errors.eventId && (
                 <p className="flex items-center mt-2 text-sm text-red-600">
@@ -205,14 +213,14 @@ const RSVPPage: React.FC = () => {
             )}
 
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+              <label htmlFor="name" className="block text-sm font-semibold text-brand-subtext mb-2">Full Name *</label>
               <input
                 type="text"
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Enter your full name"
-                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border rounded-xl transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:shadow-md ${
                   errors.name ? 'border-red-300 bg-red-50' : 'border-gray-200'
                 }`}
               />
@@ -224,14 +232,14 @@ const RSVPPage: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+              <label htmlFor="email" className="block text-sm font-semibold text-brand-subtext mb-2">Email Address *</label>
               <input
                 type="email"
                 id="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="Enter your email address"
-                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border rounded-xl transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:shadow-md ${
                   errors.email ? 'border-red-300 bg-red-50' : 'border-gray-200'
                 }`}
               />
@@ -243,19 +251,41 @@ const RSVPPage: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="guests" className="block text-sm font-semibold text-gray-700 mb-2">Number of Guests</label>
-              <input
-                type="number"
-                id="guests"
-                min="0"
-                max="10"
-                value={formData.guests}
-                onChange={(e) => handleInputChange('guests', parseInt(e.target.value) || 0)}
-                placeholder="0"
-                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent ${
-                  errors.guests ? 'border-red-300 bg-red-50' : 'border-gray-200'
-                }`}
-              />
+              <label htmlFor="guests" className="block text-sm font-semibold text-brand-subtext mb-2">Number of Guests</label>
+              <div className="relative">
+                <input
+                  type="number"
+                  id="guests"
+                  min="0"
+                  max="10"
+                  value={formData.guests}
+                  onChange={(e) => handleInputChange('guests', parseInt(e.target.value) || 0)}
+                  placeholder="0"
+                  className={`custom-number w-full px-4 py-3 border rounded-xl transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:shadow-md ${
+                    errors.guests ? 'border-red-300 bg-red-50' : 'border-gray-200'
+                  } [appearance:textfield]`}
+                  style={{ MozAppearance: 'textfield' }}
+                />
+                {/* Custom chevrons */}
+                <div className="absolute right-2 top-1/2 -translate-y-1/2 flex flex-col items-center">
+                  <button
+                    type="button"
+                    tabIndex={-1}
+                    className="p-0.5 rounded hover:bg-emerald-50"
+                    onClick={() => handleInputChange('guests', Math.min((formData.guests || 0) + 1, 10))}
+                  >
+                    <ChevronUp size={18} className="text-gray-400" />
+                  </button>
+                  <button
+                    type="button"
+                    tabIndex={-1}
+                    className="p-0.5 rounded hover:bg-emerald-50"
+                    onClick={() => handleInputChange('guests', Math.max((formData.guests || 0) - 1, 0))}
+                  >
+                    <ChevronDown size={18} className="text-gray-400" />
+                  </button>
+                </div>
+              </div>
               <p className="text-sm text-gray-500 mt-1">How many additional people will you bring? (Maximum 10)</p>
               {errors.guests && (
                 <p className="flex items-center mt-2 text-sm text-red-600">
@@ -267,7 +297,7 @@ const RSVPPage: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-emerald-600 to-amber-600 text-white py-4 rounded-xl font-semibold hover:from-emerald-700 hover:to-amber-700 focus:ring-4 focus:ring-emerald-200 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full h-9 flex items-center justify-center bg-brand-primary text-white py-4 rounded-xl font-semibold hover:bg-brand-primary/95 focus:ring-4 focus:ring-emerald-200 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[100.5%] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {isSubmitting ? (
                 <div className="flex items-center justify-center space-x-2">
@@ -286,5 +316,4 @@ const RSVPPage: React.FC = () => {
     </div>
   );
 };
-
 export default RSVPPage;
