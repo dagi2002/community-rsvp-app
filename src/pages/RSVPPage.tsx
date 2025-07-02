@@ -95,9 +95,7 @@ const RSVPPage: React.FC = () => {
             key={index}
             src={src}
             alt={`${selectedEvent?.title} - Image ${index + 1}`}
-            className="rounded-xl shadow object-cover aspect-video hover:scale-105 transition duration-200"
-          />
-        ))}
+            className="rounded-xl shadow object-cover w-full "/>        ))}
       </div>
     );
   };
@@ -147,10 +145,11 @@ const RSVPPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50 py-8 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6"> 
         <div className="lg:col-span-3"><ImageGallery side="left" /></div>
 
         <div className="lg:col-span-6 bg-white p-6 rounded-xl shadow space-y-6">
+          
           <div className="text-center">
             <UserPlus className="text-emerald-600 mx-auto mb-2" />
             <h1 className="font-bold text-2xl">Make an RSVP</h1>
@@ -163,12 +162,12 @@ const RSVPPage: React.FC = () => {
             <div>
               <label htmlFor="eventId" className="block text-sm font-semibold text-gray-700 mb-2">Select Event *</label>
               <div className="relative">
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-                <select
+              <Calendar className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400" size={14} />
+              <select
                   id="eventId"
                   value={formData.eventId}
                   onChange={(e) => handleInputChange('eventId', e.target.value)}
-                  className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent ${
+                  className={`w-full pl-12thi pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent ${
                     errors.eventId ? 'border-red-300 bg-red-50' : 'border-gray-200'
                   }`}
                 >
