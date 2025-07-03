@@ -1,44 +1,32 @@
 import { useState, useEffect } from 'react';
 import { Event, Attendee } from '../types/Event';
-import { getEventsFromStorage, saveEventsToStorage } from '../utils/storage';
+import { fetchEvents, rsvpToEvent } from '../utils/api';
 
 export const useEvents = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadEvents = () => {
-      const storedEvents = getEventsFromStorage();
-      setEvents(storedEvents);
-      setLoading(false);
+    const loadEvents = async () => {
+      try {
+        const data = await fetchEvents();
+        setEvents(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
     };
-
     loadEvents();
   }, []);
 
-  const addRSVP = (eventId: string, attendee: Attendee) => {
-    const updatedEvents = events.map(event => {
-      if (event.id === eventId) {
-        const existingAttendee = event.attendees.find(a => a.email === attendee.email);
-        if (existingAttendee) {
-          return {
-            ...event,
-            attendees: event.attendees.map(a => 
-              a.email === attendee.email ? attendee : a
-            )
-          };
-        } else {
-          return {
-            ...event,
-            attendees: [...event.attendees, attendee]
-          };
-        }
-      }
-      return event;
-    });
-
-    setEvents(updatedEvents);
-    saveEventsToStorage(updatedEvents);
+  const addRSVP = async (eventId: string, attendee: Attendee) => {
+    try {
+      const updated = await rsvpToEvent(eventId, attendee);
+      setEvents(events.map(e => (e.id === eventId ? updated : e)));
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const getTotalAttendees = (event: Event): number => {
