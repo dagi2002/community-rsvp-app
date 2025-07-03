@@ -1,6 +1,6 @@
 import { getEventsFromStorage, saveEventsToStorage } from './storage';
 import { describe, expect, test, beforeEach } from 'vitest';
-import { Event } from '../../types/Event';
+import { Event } from '../types/Event';
 
 const mockEvents: Event[] = [
   {
