@@ -30,7 +30,7 @@ const getSampleEvents = (): Event[] => [
       '/images/events1-3.JPG',
       '/images/events1-0.png',
             '/images/events1-6.JPG',
-'/images/events1-4.JPG',
+      '/images/events1-4.JPG',
       '/images/events1-2.png',
       '/images/events1-5.JPG',
       

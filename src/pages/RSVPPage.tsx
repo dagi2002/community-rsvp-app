@@ -95,7 +95,7 @@ const RSVPPage: React.FC = () => {
             key={index}
             src={src}
             alt={`${selectedEvent?.title} - Image ${index + 1}`}
-            className="rounded-xl shadow object-cover w-full "/>        ))}
+            className="rounded-xl shadow object-cover w-full hover:scale-105 transition duration-200 "/>        ))}
       </div>
     );
   };
@@ -146,9 +146,9 @@ const RSVPPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50 py-8 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6"> 
-        <div className="lg:col-span-3"><ImageGallery side="left" /></div>
+        <div className="lg:col-span-4"><ImageGallery side="left" /></div>
 
-        <div className="lg:col-span-6 bg-white p-6 rounded-xl shadow space-y-6">
+        <div className="lg:col-span-4 bg-white p-6 rounded-xl shadow space-y-6">
           
           <div className="text-center">
             <UserPlus className="text-emerald-600 mx-auto mb-2" />
@@ -280,7 +280,7 @@ const RSVPPage: React.FC = () => {
           </form>
         </div>
 
-        <div className="lg:col-span-3"><ImageGallery side="right" /></div>
+        <div className="lg:col-span-4"><ImageGallery side="right" /></div>
       </div>
     </div>
   );
