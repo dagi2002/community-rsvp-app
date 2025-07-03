@@ -1,13 +1,13 @@
 Addis Community RSVP
 
-A simple React + Vite + Tailwind app for listing upcoming community events in Addis Ababa and letting residents submit RSVPs.
+Addis Community RSVP is a simple React + Vite + Tailwind app that lists upcoming community events in Addis Ababa and allows residents to register their attendance. Users can view event details — including title, date, description, and images — and submit an RSVP with their name, email, and number of guests. The goal is to provide a lightweight, user-friendly platform for event discovery and registration.
 
 ⸻
 
 🔍 Features
 	•	Event List – Browse cards showing each event’s title, date, image, and description
 	•	RSVP Form – Submit your name, email, and number of guests
-	•	Local Persistence – All data is stored in browser storage (no backend needed)
+	•	Simple Node.js backend stores events and RSVPs
 	•	Event Images – Events display a photo or placeholder
 	•	Branch-based Workflow – Structured Git workflow with feature branches and pull requests
 	•	CI/CD Pipeline – Automated lint, test, build, and deploy checks using GitHub Actions and Vercel
@@ -23,9 +23,14 @@ cd community-rsvp-app
 2️⃣ Install dependencies
 npm install
 
-3️⃣ Start the dev server
-npm run dev
-Open in your browser at http://localhost:5173
+3️⃣ Start both frontend and backend simultaneously
+npm start
+
+This will automatically:
+	Launch frontend on http://localhost:5173
+	Launch backend API on http://localhost:3001
+
+
 
 🧪 Running Tests
 
