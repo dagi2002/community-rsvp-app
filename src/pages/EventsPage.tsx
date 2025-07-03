@@ -3,13 +3,11 @@ import { useEvents } from '../hooks/useEvents';
 import EventCard from '../components/EventCard';
 import SearchAndFilter from '../components/SearchAndFilter';
 import { Calendar } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 const EventsPage: React.FC = () => {
   const { events, loading, getTotalAttendees } = useEvents();
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState('all');
-  const navigate = useNavigate();
 
   const filteredEvents = useMemo(() => {
     let filtered = events.filter(event =>
@@ -86,11 +84,10 @@ const EventsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredEvents.map((event) => (
               <EventCard
-                key={event.id}
-                event={event}
-                totalAttendees={getTotalAttendees(event)}
-                onRSVP={() => navigate(`/rsvp?event=${event.id}`)}
-              />
+              key={event.id}
+              event={event}
+              totalAttendees={getTotalAttendees(event)}
+            />
             ))}
           </div>
         )}
