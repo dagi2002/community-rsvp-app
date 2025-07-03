@@ -39,24 +39,25 @@ const EventCard: React.FC<EventCardProps> = ({ event, totalAttendees }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100 h-full flex flex-col">
       <div className="h-2 bg-gradient-to-r from-emerald-500 to-amber-500"></div>
 
       {images.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 p-1">
+        <div className="grid grid-cols-3 gap-1 p-1">
           {images.map((src, idx) => (
-            <img
-              key={idx}
-              src={src}
-              alt={`${event.title} ${idx + 1}`}
-              onError={handleImageError}
-              className="w-full h-auto object-cover rounded-sm shadow-sm"
-            />
+            <div key={idx} className="relative w-full aspect-[4/3] overflow-hidden">
+              <img
+                src={src}
+                alt={`${event.title} ${idx + 1}`}
+                onError={handleImageError}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
           ))}
         </div>
       )}
 
-      <div className="p-6">
+      <div className="p-6 flex-grow flex flex-col">
         <div className="flex items-start justify-between mb-4">
           <h3 className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-200 line-clamp-2">
             {event.title}
@@ -71,7 +72,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, totalAttendees }) => {
           {event.description}
         </p>
 
-        <div className="space-y-2 mb-6">
+        <div className="mt-auto space-y-2 mb-6">
           <div className="flex items-center space-x-2 text-gray-700">
             <Calendar size={16} className="text-emerald-500" />
             <span className="text-sm font-medium">{date}</span>

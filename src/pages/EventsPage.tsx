@@ -3,11 +3,13 @@ import { useEvents } from '../hooks/useEvents';
 import EventCard from '../components/EventCard';
 import SearchAndFilter from '../components/SearchAndFilter';
 import { Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const EventsPage: React.FC = () => {
   const { events, loading, getTotalAttendees } = useEvents();
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState('all');
+  const navigate = useNavigate();
 
   const filteredEvents = useMemo(() => {
     let filtered = events.filter(event =>
@@ -41,15 +43,18 @@ const EventsPage: React.FC = () => {
 
   if (loading) {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50 flex items-center justify-center">        <div className="text-center">
-      <Calendar className="h-12 w-12 text-emerald-600 animate-bounce mx-auto mb-4" />          <p className="text-gray-600 text-lg">Loading events...</p>
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50 flex items-center justify-center">
+        <div className="text-center">
+          <Calendar className="h-12 w-12 text-emerald-600 animate-bounce mx-auto mb-4" />
+          <p className="text-gray-600 text-lg">Loading events...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50">      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent mb-4">
             Events in Addis Ababa
@@ -84,6 +89,7 @@ const EventsPage: React.FC = () => {
                 key={event.id}
                 event={event}
                 totalAttendees={getTotalAttendees(event)}
+                onRSVP={() => navigate(`/rsvp?event=${event.id}`)}
               />
             ))}
           </div>

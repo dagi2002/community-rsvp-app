@@ -27,9 +27,13 @@ const getSampleEvents = (): Event[] => [
     date: '2025-07-12T10:00:00.000Z',
     description: 'Experience the rich flavors of Ethiopian coffee with local experts in Bole.',
     images: [
+      '/images/events1-3.JPG',
       '/images/events1-0.png',
-      '/images/events1-1.png',
+            '/images/events1-6.JPG',
+      '/images/events1-4.JPG',
       '/images/events1-2.png',
+      '/images/events1-5.JPG',
+      
     ],
     attendees: [
       { name: 'Abebe Bekele', email: 'abebe@example.com', guests: 1 },
@@ -51,7 +55,7 @@ const getSampleEvents = (): Event[] => [
     title: 'Injera Cooking Workshop at Megenagna',
     date: '2025-07-11T15:00:00.000Z',
     description: 'Learn how to make traditional injera and wot with our expert Momma chefs.',
-    images: ['/images/event3-1.png', '/images/event3-2.png'],
+    images: ['/images/event3-1.png', '/images/event3-7.jpg', '/images/event3-3.jpeg', '/images/event3-2.png','/images/event3-6.jpg','/images/event3-4.jpg'],
     attendees: [
       { name: 'Liya Teshome', email: 'birhanu@example.com', guests: 100 }
     ]
